@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Jahitin</string>
+    <string name="rekomendasi">Rekomendasi</string>
+    <string name="nama_toko">Ini Nama Toko</string>
+    <string name="deskripsi_foto_toko">Foto Toko</string>
+    <string name="nama_baju">Baju Model Terbaru</string>
+    <string name="deskripsi_foto_baju">Foto Baju</string>
+    <string name="bahan_baju">Bahan : Katun</string>
+    <string name="ukuran_baju">Ukuran : All Size</string>
+    <string name="harga_baju">Rp120.000</string>
+</resources>

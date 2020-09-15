@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Beranda">
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carousel_main"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:indicatorVisibility="gone"
+        app:slideInterval="3000" />
+
+    <ProgressBar
+        android:id="@+id/main_progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_recommend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EFEFEF"
+        android:paddingVertical="6dp"
+        android:text="@string/rekomendasi"
+        android:textAlignment="center"
+        android:textColor="#BFBFBF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/carousel_main"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_main_toko"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_recommend"
+        tools:listitem="@layout/item_toko_rekomendasi"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:itemCount="5"/>
+</RelativeLayout>
