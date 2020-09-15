@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.jahitin.Models.BarangModel
 import com.example.jahitin.R
-import com.squareup.picasso.Picasso
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -28,7 +28,7 @@ class EtalaseAdapter(private val barang: ArrayList<BarangModel>) : RecyclerView.
     }
 
     override fun onBindViewHolder(holder: EtalaseViewHolder, position: Int) {
-        Picasso.get()
+        Glide.with(holder.itemView.context)
             .load(barang[position].foto)
             .into(holder.foto)
 

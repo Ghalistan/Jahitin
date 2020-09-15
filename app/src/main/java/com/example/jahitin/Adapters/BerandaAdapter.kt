@@ -10,10 +10,10 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.jahitin.EtalaseTokoActivity
 import com.example.jahitin.Models.TokoModel
 import com.example.jahitin.R
-import com.squareup.picasso.Picasso
 
 class BerandaAdapter(private val listToko : List<TokoModel>) : RecyclerView.Adapter<BerandaAdapter.BerandaViewHolder>() {
     class BerandaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,7 +31,7 @@ class BerandaAdapter(private val listToko : List<TokoModel>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: BerandaViewHolder, position: Int) {
         val toko = listToko[position]
 
-        Picasso.get()
+        Glide.with(holder.itemView.context)
             .load(toko.fotoToko)
             .into(holder.imageFoto)
 

@@ -9,10 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EtalaseTokoActivity"></activity>
-        <activity android:name=".TokoActivity" />
-        <activity android:name=".Toko" />
-        <activity android:name=".Beranda">
+        <activity android:name=".EtalaseTokoActivity"/>
+        <activity android:name=".BerandaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

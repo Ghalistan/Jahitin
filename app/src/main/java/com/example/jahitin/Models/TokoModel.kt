@@ -1,5 +1,8 @@
 package com.example.jahitin.Models
 
+import com.google.firebase.database.IgnoreExtraProperties
+
+@IgnoreExtraProperties
 data class TokoModel(
     var fotoToko : Int = 0,
     var namaToko : String = "",
