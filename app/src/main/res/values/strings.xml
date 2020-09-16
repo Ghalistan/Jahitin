@@ -8,4 +8,6 @@
     <string name="bahan_baju">Bahan : Katun</string>
     <string name="ukuran_baju">Ukuran : All Size</string>
     <string name="harga_baju">Rp120.000</string>
+    <string name="buttonTambahTeks">Tambah</string>
+    <string name="detail_toko">Detail Toko</string>
 </resources>

@@ -13,7 +13,7 @@ import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class EtalaseAdapter(private val barang: ArrayList<BarangModel>) : RecyclerView.Adapter<EtalaseAdapter.EtalaseViewHolder>() {
+class EtalaseAdapter(private val barang: MutableList<BarangModel>) : RecyclerView.Adapter<EtalaseAdapter.EtalaseViewHolder>() {
     class EtalaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var foto : ImageView = itemView.findViewById(R.id.foto_baju)
         var nama : TextView = itemView.findViewById(R.id.nama_baju)
@@ -33,8 +33,10 @@ class EtalaseAdapter(private val barang: ArrayList<BarangModel>) : RecyclerView.
             .into(holder.foto)
 
         holder.nama.text = barang[position].nama
-        holder.bahan.text = "Bahan : ${barang[position].bahan}"
-        holder.ukuran.text = "Ukuran : ${barang[position].Ukuran}"
+        val bahan = "Bahan : " + barang[position].bahan
+        holder.bahan.text = bahan
+        val ukuran = "Ukuran : " + barang[position].Ukuran
+        holder.ukuran.text = ukuran
         holder.harga.text = getCurrencies(barang[position].Harga)
     }
 

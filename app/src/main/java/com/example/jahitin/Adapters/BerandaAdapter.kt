@@ -40,8 +40,8 @@ class BerandaAdapter(private val listToko : List<TokoModel>) : RecyclerView.Adap
         holder.cardToko.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, EtalaseTokoActivity::class.java)
+            intent.putExtra(EtalaseTokoActivity.KODE_TOKO, toko.kodeToko)
             intent.putExtra(EtalaseTokoActivity.NAMA_TOKO, toko.namaToko)
-            intent.putParcelableArrayListExtra(EtalaseTokoActivity.DATA_BARANG,  ArrayList(toko.barangToko))
             context.startActivity(intent)
         }
     }
