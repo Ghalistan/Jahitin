@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fotoUserUlasan"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_outline_account_circle_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/statusUlasan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pembeli"
+            android:textColor="#007bc3"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@id/fotoUserUlasan"
+            app:layout_constraintBottom_toBottomOf="@id/fotoUserUlasan"
+            android:layout_marginHorizontal="10dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:fontFamily="@font/roboto"
+            android:text="18 Februari 2019"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@id/fotoUserUlasan"
+            app:layout_constraintStart_toEndOf="@id/statusUlasan"
+            app:layout_constraintTop_toTopOf="@id/statusUlasan" />
+
+        <TextView
+            android:id="@+id/namaUserUlasan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Gagah Ghalistan"
+            android:textSize="12sp"
+            android:textColor="#424242"
+            app:layout_constraintTop_toTopOf="@id/fotoUserUlasan"
+            app:layout_constraintStart_toStartOf="@id/statusUlasan"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Pakaiannya sudah sampaiPakaiannya sPakaiannya sudah sampaiPakaiannya sPakaiannya sudah sampaiPakaiannya sPakaiannya sudah sampaiPakaiannya sudah sampaiPakaiannya sudah sampaiPakaiannya sudah sampaiPakaiannya sudah sampaiPakaiannya sudah sampai"
+            android:fontFamily="@font/roboto"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:lines="3"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/fotoUserUlasan"
+            app:layout_constraintStart_toStartOf="@id/fotoUserUlasan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

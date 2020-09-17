@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformasiTokoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/informasiTokoToolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/fotoToko"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/toko_placeholder1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/informasiTokoToolbar" />
+
+    <TextView
+        android:id="@+id/titleAlamatToko"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Alamat Toko"
+        android:textColor="#424242"
+        android:lines="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fotoToko" />
+
+    <TextView
+        android:id="@+id/alamatToko"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/alamat"
+        android:textColor="#a7a7a7"
+        app:layout_constraintEnd_toEndOf="@id/titleAlamatToko"
+        app:layout_constraintStart_toStartOf="@id/titleAlamatToko"
+        app:layout_constraintTop_toBottomOf="@id/titleAlamatToko" />
+
+    <TextView
+        android:id="@+id/titleNoTelpToko"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="No. Telp"
+        android:textColor="#424242"
+        android:lines="1"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@id/alamatToko"
+        app:layout_constraintStart_toStartOf="@id/alamatToko"
+        app:layout_constraintEnd_toEndOf="@id/alamatToko"/>
+
+    <TextView
+        android:id="@+id/noTelpToko"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="0822123456789"
+        android:textColor="#a7a7a7"
+        android:lines="1"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@id/titleNoTelpToko"
+        app:layout_constraintStart_toStartOf="@id/titleNoTelpToko"
+        app:layout_constraintEnd_toStartOf="@id/hubungiTelp"/>
+
+    <TextView
+        android:id="@+id/hubungiTelp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Hubungi"
+        android:textColor="#f44336"
+        app:layout_constraintEnd_toEndOf="@id/titleNoTelpToko"
+        app:layout_constraintLeft_toRightOf="@id/noTelpToko"
+        app:layout_constraintTop_toBottomOf="@id/titleNoTelpToko" />
+
+    <TextView
+        android:id="@+id/titleStatistik"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Rating Toko"
+        android:textColor="#424242"
+        android:lines="1"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@id/noTelpToko"
+        app:layout_constraintStart_toStartOf="@id/noTelpToko"
+        app:layout_constraintEnd_toEndOf="@id/hubungiTelp" />
+
+    <TextView
+        android:id="@+id/angkatStatistik"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/rating_placeholder"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintTop_toBottomOf="@id/titleStatistik"
+        app:layout_constraintStart_toStartOf="@id/titleStatistik"
+        app:layout_constraintBottom_toBottomOf="@id/ratingBar"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="4.2"
+        android:stepSize="0.1"
+        android:theme="@style/ratingBarTheme"
+        app:layout_constraintLeft_toRightOf="@id/angkatStatistik"
+        app:layout_constraintTop_toBottomOf="@id/titleStatistik" />
+
+    <TextView
+        android:id="@+id/titleUlasan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Ulasan"
+        android:textColor="#424242"
+        android:lines="1"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@id/ratingBar"
+        app:layout_constraintStart_toStartOf="@id/noTelpToko" />
+
+    <TextView
+        android:id="@+id/ulasanLainnya"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Lainnya"
+        android:textColor="#f44336"
+        app:layout_constraintTop_toTopOf="@id/titleUlasan"
+        app:layout_constraintLeft_toRightOf="@id/titleUlasan"
+        app:layout_constraintEnd_toEndOf="@id/alamatToko"/>
+
+    <TextView
+        android:id="@+id/ulasanKosong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/titleUlasan"
+        android:text="Belum ada ulasan"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUlasan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/alamatToko"
+        app:layout_constraintEnd_toEndOf="@id/alamatToko"
+        app:layout_constraintTop_toBottomOf="@id/titleUlasan"
+        tools:listitem="@layout/item_ulasan"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

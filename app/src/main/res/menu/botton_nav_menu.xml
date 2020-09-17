@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navBeranda"
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_house_24"
+        android:title="Beranda" />
+    <item
+        android:id="@+id/navKeranjang"
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_shopping_cart_24"
+        android:title="Keranjang" />
+    <item
+        android:id="@+id/navTransaksi"
+        android:enabled="true"
+        android:icon="@drawable/transaksi"
+        android:title="Transaksi" />
+    <item
+        android:id="@+id/navAkun"
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_account_circle_24"
+        android:title="Akun" />
+</menu>

@@ -10,4 +10,6 @@
     <string name="harga_baju">Rp120.000</string>
     <string name="buttonTambahTeks">Tambah</string>
     <string name="detail_toko">Detail Toko</string>
+    <string name="alamat">Jl. Sukabirus, Gang. Sebelah Masjid Istiqomah Bojongsoang, Bandung, 40257</string>
+    <string name="rating_placeholder">4.2</string>
 </resources>

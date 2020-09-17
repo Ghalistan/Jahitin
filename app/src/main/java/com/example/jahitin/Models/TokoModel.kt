@@ -8,5 +8,7 @@ data class TokoModel(
     var fotoToko : String = "",
     var namaToko : String = "",
     var ratingToko : Double = 0.0,
+    var alamatToko : String = "",
+    var noTelp : String = "",
     var barangToko : List<BarangModel> = emptyList()
 )

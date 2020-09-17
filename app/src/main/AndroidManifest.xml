@@ -16,8 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EtalaseTokoActivity"
-            android:parentActivityName=".BerandaActivity"/>
+        <activity
+            android:name=".EtalaseTokoActivity"
+            android:parentActivityName=".BerandaActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".InformasiTokoActivity"
+            android:parentActivityName=".EtalaseTokoActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

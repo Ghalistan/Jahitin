@@ -26,7 +26,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/deskripsi_foto_toko"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/toko_placeholder2" />
+                app:srcCompat="@drawable/toko_placeholder1" />
 
             <TextView
                 android:id="@+id/tv_nama_toko"
@@ -48,6 +48,7 @@
                 android:isIndicator="true"
                 android:numStars="5"
                 android:rating="3"
+                android:stepSize="0.1"
                 android:theme="@style/ratingBarTheme"
                 android:layout_alignParentBottom="true"/>
         </RelativeLayout>
