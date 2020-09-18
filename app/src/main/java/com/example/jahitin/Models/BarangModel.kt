@@ -7,7 +7,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @IgnoreExtraProperties
 data class BarangModel(
-    var foto : Int = 0,
+    var foto : String = "",
     var nama : String = "",
     var bahan : String = "",
     var Ukuran : String = "",
