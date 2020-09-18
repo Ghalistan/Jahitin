@@ -12,4 +12,6 @@
     <string name="detail_toko">Detail Toko</string>
     <string name="alamat">Jl. Sukabirus, Gang. Sebelah Masjid Istiqomah Bojongsoang, Bandung, 40257</string>
     <string name="rating_placeholder">4.2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
