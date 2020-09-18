@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".BerandaActivity">
+        <activity
+            android:name=".BerandaActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,10 +21,12 @@
         <activity
             android:name=".EtalaseTokoActivity"
             android:parentActivityName=".BerandaActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".InformasiTokoActivity"
-            android:parentActivityName=".EtalaseTokoActivity"/>
+            android:parentActivityName=".EtalaseTokoActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"

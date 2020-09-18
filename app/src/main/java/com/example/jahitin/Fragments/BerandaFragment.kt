@@ -26,6 +26,7 @@ class BerandaFragment : Fragment() {
     private lateinit var database : DatabaseReference
     private lateinit var progressBar : ProgressBar
     private lateinit var rvToko : RecyclerView
+    private lateinit var carousel : CarouselView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +42,7 @@ class BerandaFragment : Fragment() {
         database = Firebase.database.reference
         progressBar = view.findViewById(R.id.main_progress_bar)
         rvToko = view.findViewById(R.id.rv_main_toko)
+        carousel = view.findViewById<CarouselView>(R.id.carousel_main)
         populateCarousel()
         populateRecycler()
     }
@@ -69,7 +71,6 @@ class BerandaFragment : Fragment() {
     }
 
     private fun setCarousel(pictData : MutableList<String>) {
-        val carousel = view!!.findViewById<CarouselView>(R.id.carousel_main)
         carousel.setImageListener { position, imageView ->
             Glide.with(this)
                 .load(pictData[position])
@@ -81,7 +82,7 @@ class BerandaFragment : Fragment() {
 
     private fun populateCarousel() {
         val carouselRef = database.child("Carousel")
-        carouselRef.addValueEventListener(object : ValueEventListener {
+        carouselRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val link = mutableListOf<String>()
                 link.clear()

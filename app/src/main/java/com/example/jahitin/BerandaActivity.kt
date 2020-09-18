@@ -3,12 +3,15 @@ package com.example.jahitin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jahitin.Fragments.AkunFragment
 import com.example.jahitin.Fragments.BerandaFragment
 import com.example.jahitin.Fragments.KeranjangFragment
+import com.example.jahitin.Fragments.TransaksiFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DatabaseReference
 
@@ -31,6 +34,7 @@ class BerandaActivity : AppCompatActivity(),
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.navBeranda -> {
+                title = "Jahitin"
                 loadFragment(BerandaFragment())
                 true
             }
@@ -40,11 +44,13 @@ class BerandaActivity : AppCompatActivity(),
                 true
             }
             R.id.navTransaksi -> {
-                Toast.makeText(this, "Transaksi", Toast.LENGTH_SHORT).show()
+                title = "Transaksi"
+                loadFragment(TransaksiFragment())
                 true
             }
             R.id.navAkun -> {
-                Toast.makeText(this, "Akun", Toast.LENGTH_SHORT).show()
+                title = "Akun"
+                loadFragment(AkunFragment())
                 true
             }
             else -> false

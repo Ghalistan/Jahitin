@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.AkunFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/akunBackground"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:src="@drawable/akun_header"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/akunPict"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_outline_account_circle_24"
+            android:layout_margin="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins"
+            android:lines="1"
+            android:text="Aditya Eka Maulana"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/akunPict"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/akunPict"
+            app:layout_constraintTop_toTopOf="@id/akunPict" />
+
+        <TextView
+            android:id="@+id/angkaJumlahTransaksi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/jumlahTransaksi"
+            app:layout_constraintStart_toStartOf="@id/jumlahTransaksi"
+            app:layout_constraintEnd_toEndOf="@id/jumlahTransaksi" />
+
+        <TextView
+            android:id="@+id/jumlahTransaksi"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="Jumlah Transaksi"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/akunBackground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/jumlahKeranjang" />
+
+        <TextView
+            android:id="@+id/angkaJumlahKeranjang"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/jumlahKeranjang"
+            app:layout_constraintStart_toStartOf="@id/jumlahKeranjang"
+            app:layout_constraintEnd_toEndOf="@id/jumlahKeranjang" />
+
+        <TextView
+            android:id="@+id/jumlahKeranjang"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="Isi Keranjang"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/jumlahTransaksi"
+            app:layout_constraintLeft_toRightOf="@id/jumlahTransaksi"
+            app:layout_constraintRight_toLeftOf="@id/jumlahWishlist" />
+
+        <TextView
+            android:id="@+id/angkaJumlahWishlist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/jumlahWishlist"
+            app:layout_constraintStart_toStartOf="@id/jumlahWishlist"
+            app:layout_constraintEnd_toEndOf="@id/jumlahWishlist" />
+
+        <TextView
+            android:id="@+id/jumlahWishlist"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="Jumlah Wishlist"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/jumlahKeranjang"
+            app:layout_constraintLeft_toRightOf="@id/jumlahKeranjang"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvDataDiri"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/akunBackground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/titleDataDiri"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_medium"
+                    android:lines="1"
+                    android:text="Data Diri Pengguna"
+                    android:textColor="#f44336"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/tombolEdit"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/tombolEdit"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/edit_akun"
+                    android:layout_margin="10dp"
+                    app:layout_constraintTop_toTopOf="@id/titleDataDiri"
+                    app:layout_constraintBottom_toBottomOf="@id/titleDataDiri"
+                    app:layout_constraintLeft_toRightOf="@id/titleDataDiri"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+                <TextView
+                    android:id="@+id/titleNamaLengkap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Lengkap"
+                    android:textColor="#a7a7a7"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintTop_toBottomOf="@id/titleDataDiri"
+                    app:layout_constraintStart_toStartOf="@id/titleDataDiri" />
+
+                <TextView
+                    android:id="@+id/namaLengkap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Adtya Eka Maulana"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintTop_toBottomOf="@id/titleNamaLengkap"
+                    app:layout_constraintStart_toStartOf="@id/titleDataDiri"
+                    app:layout_constraintEnd_toEndOf="@id/tombolEdit"
+                    android:lines="2"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/titleEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="#a7a7a7"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintTop_toBottomOf="@id/namaLengkap"
+                    app:layout_constraintStart_toStartOf="@id/titleDataDiri" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Adityaeka@gmail.com"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintTop_toBottomOf="@id/titleEmail"
+                    app:layout_constraintStart_toStartOf="@id/titleDataDiri"
+                    app:layout_constraintEnd_toEndOf="@id/tombolEdit"
+                    android:lines="2"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/titleAlamat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat"
+                    android:textColor="#a7a7a7"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintTop_toBottomOf="@id/email"
+                    app:layout_constraintStart_toStartOf="@id/titleDataDiri" />
+
+                <TextView
+                    android:id="@+id/alamat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_medium"
+                    android:lines="2"
+                    android:text="Adityaeka@gmail.com"
+                    app:layout_constraintEnd_toEndOf="@id/tombolEdit"
+                    app:layout_constraintStart_toStartOf="@id/titleDataDiri"
+                    app:layout_constraintTop_toBottomOf="@id/titleAlamat" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:text="Logout"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#f44336"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/orange_border"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/cvDataDiri"
+            app:layout_constraintStart_toStartOf="@id/cvDataDiri"
+            app:layout_constraintEnd_toEndOf="@id/cvDataDiri" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
