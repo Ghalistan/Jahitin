@@ -61,16 +61,16 @@ class InformasiTokoActivity : AppCompatActivity() {
                     .into(fotoToko)
 
                 alamatToko.text =
-                    if (data.alamatToko.isNullOrEmpty()) "Tidak ada alamat." else data.alamatToko
+                    if (data.alamatToko.isEmpty()) "Tidak ada alamat." else data.alamatToko
                 noTelp.text =
-                    if (data.noTelp.isNullOrEmpty()) "Tidak ada nomor telepon." else data.noTelp
+                    if (data.noTelp.isEmpty()) "Tidak ada nomor telepon." else data.noTelp
                 ratingTokoAngka.text = data.ratingToko.toString()
                 ratingToko.rating = data.ratingToko.toFloat()
 
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.w("Pesan", error.toException())
             }
         })
     }

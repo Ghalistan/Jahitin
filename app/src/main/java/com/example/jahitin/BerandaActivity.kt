@@ -13,7 +13,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DatabaseReference
 
 class BerandaActivity : AppCompatActivity(),
-    BottomNavigationView.OnNavigationItemSelectedListener {
+    BottomNavigationView.OnNavigationItemSelectedListener,
+    BottomNavigationView.OnNavigationItemReselectedListener {
     private lateinit var bnMenu : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,7 @@ class BerandaActivity : AppCompatActivity(),
         setSupportActionBar(findViewById(R.id.berandaToolbar))
         bnMenu = findViewById(R.id.bottomNavMenu)
         bnMenu.setOnNavigationItemSelectedListener(this)
+        bnMenu.setOnNavigationItemReselectedListener(this)
         loadFragment(BerandaFragment())
     }
 
@@ -33,7 +35,8 @@ class BerandaActivity : AppCompatActivity(),
                 true
             }
             R.id.navKeranjang -> {
-                Toast.makeText(this, "Keranjang", Toast.LENGTH_SHORT).show()
+                title = "Keranjang"
+                loadFragment(KeranjangFragment())
                 true
             }
             R.id.navTransaksi -> {
@@ -53,5 +56,9 @@ class BerandaActivity : AppCompatActivity(),
             .beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
+    }
+
+    override fun onNavigationItemReselected(item: MenuItem) {
+
     }
 }
