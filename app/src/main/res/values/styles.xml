@@ -14,4 +14,10 @@
         <item name="fontFamily">@font/poppins_medium</item>
         <item name="backgroundTint">#F44336</item>
     </style>
+    <style name="Theme.AppCompat.Launcher">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
 </resources>

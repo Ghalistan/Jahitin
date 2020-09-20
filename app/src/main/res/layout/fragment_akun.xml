@@ -31,6 +31,7 @@
             app:tint="#FFFFFF" />
 
         <TextView
+            android:id="@+id/nama"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -228,6 +229,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
+            android:id="@+id/buttonLogout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:elevation="0dp"

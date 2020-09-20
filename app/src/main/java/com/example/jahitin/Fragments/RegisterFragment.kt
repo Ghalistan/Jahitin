@@ -1,18 +1,20 @@
 package com.example.jahitin.Fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.jahitin.AuthenticationActivity
 import com.example.jahitin.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 class RegisterFragment : Fragment(), View.OnClickListener {
@@ -46,13 +48,21 @@ class RegisterFragment : Fragment(), View.OnClickListener {
         when (v.id) {
             R.id.buttonRegister -> {
                 if (!cekEmpty()) {
-                    Log.d("Pesan", "GA KOSONG")
+                    registAccount(email.text.toString(), password.text.toString())
+                    Toast.makeText(activity, "Mengirimkan data...", Toast.LENGTH_LONG).show()
+                    hideKeyboard()
                 }
             }
         }
     }
 
-    fun cekEmpty() : Boolean {
+    fun hideKeyboard() {
+        val view = activity!!.currentFocus
+        val imm = context!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view!!.windowToken, 0)
+    }
+
+    private fun cekEmpty() : Boolean {
         return if (nama.text.isEmpty()) {
             nama.error = "Masukkan nama lengkap anda"
             true
@@ -69,13 +79,22 @@ class RegisterFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    fun registAccount(email : String, pass : String) {
-        auth.createUserWithEmailAndPassword(email, pass)
-            .addOnCompleteListener() { task ->
+    private fun registAccount(e : String, p : String) {
+        auth.createUserWithEmailAndPassword(e, p)
+            .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d("Pesan", "registerberhasil")
+                    val user = Firebase.auth.currentUser
+                    val update = userProfileChangeRequest { displayName = nama.text.toString() }
+                    user!!.updateProfile(update)
+                        .addOnCompleteListener { task ->
+                            Toast.makeText(activity, "Registrasi berhasil, silahkan login", Toast.LENGTH_LONG).show()
+                            nama.text.clear()
+                            email.text.clear()
+                            password.text.clear()
+                        }
                 } else {
-                    Log.w("Pesan", "failure", task.exception)
+                    Toast.makeText(activity, "Registrasi gagal, coba lagi nanti", Toast.LENGTH_LONG).show()
+                    Log.w("Pesan", "Register Failed : ", task.exception)
                 }
             }
     }
