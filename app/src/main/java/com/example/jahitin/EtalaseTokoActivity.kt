@@ -3,7 +3,6 @@ package com.example.jahitin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
@@ -23,6 +22,7 @@ import com.google.firebase.ktx.Firebase
 class EtalaseTokoActivity : AppCompatActivity() {
     private lateinit var rvEtalase : RecyclerView
     private lateinit var database : DatabaseReference
+    private lateinit var kodeToko : String
 
     companion object {
         const val KODE_TOKO = "kode_toko"
@@ -39,11 +39,12 @@ class EtalaseTokoActivity : AppCompatActivity() {
         title = intent.getStringExtra(NAMA_TOKO)
 
         database = Firebase.database.reference
+        kodeToko = intent.getStringExtra(KODE_TOKO)!!
         populateBarang()
     }
 
     fun populateBarang() {
-        val dataRef = database.child("Toko").child(intent.getStringExtra(KODE_TOKO)).child("barangToko")
+        val dataRef = database.child("Toko").child(kodeToko).child("barangToko")
         dataRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val kumpulanBarang = mutableListOf<BarangModel>()

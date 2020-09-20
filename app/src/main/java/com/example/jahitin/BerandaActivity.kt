@@ -1,24 +1,19 @@
 package com.example.jahitin
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import android.widget.ProgressBar
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.example.jahitin.Fragments.AkunFragment
 import com.example.jahitin.Fragments.BerandaFragment
 import com.example.jahitin.Fragments.KeranjangFragment
 import com.example.jahitin.Fragments.TransaksiFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.database.DatabaseReference
 
 class BerandaActivity : AppCompatActivity(),
     BottomNavigationView.OnNavigationItemSelectedListener,
     BottomNavigationView.OnNavigationItemReselectedListener {
-    private lateinit var bnMenu : BottomNavigationView
+    private lateinit var bnMenu: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

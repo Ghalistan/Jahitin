@@ -50,6 +50,10 @@ class InformasiTokoActivity : AppCompatActivity() {
         ulasanKosong.visibility = View.VISIBLE
 
         database = Firebase.database.reference
+        populateData()
+    }
+
+    private fun populateData() {
         val dataRef = database.child("Toko").child(intent.getStringExtra(KODE_TOKO)!!)
         dataRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -42,7 +42,7 @@ class BerandaFragment : Fragment() {
         database = Firebase.database.reference
         progressBar = view.findViewById(R.id.main_progress_bar)
         rvToko = view.findViewById(R.id.rv_main_toko)
-        carousel = view.findViewById<CarouselView>(R.id.carousel_main)
+        carousel = view.findViewById(R.id.carousel_main)
         populateCarousel()
         populateRecycler()
     }

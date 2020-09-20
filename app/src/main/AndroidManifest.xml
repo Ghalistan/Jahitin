@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity
-            android:name=".BerandaActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".AuthenticationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,14 +17,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".BerandaActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".EtalaseTokoActivity"
-            android:parentActivityName=".BerandaActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"/>
+            android:parentActivityName=".BerandaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".InformasiTokoActivity"
             android:parentActivityName=".EtalaseTokoActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
