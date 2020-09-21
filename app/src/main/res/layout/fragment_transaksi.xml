@@ -13,6 +13,7 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tlTransaksi"
             android:layout_width="0dp"
+            android:theme="@style/AppTheme.TabLayaout"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
